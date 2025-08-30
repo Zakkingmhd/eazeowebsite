@@ -1,0 +1,59 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Define Tailwind CSS theme overrides and custom styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables for easier theme management */
+:root {
+    --primary: #2ecc71;
+    --primary-dark: #27ae60;
+    --dark-charcoal: #343a40;
+}
+
+/* Apply fonts */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tailwind Custom Configuration (for reference, applied via CDN) */
+/* This is to show the config that powers the classes used in the HTML */
+const tailwindConfig = {
+    theme: {
+        extend: {
+            fontFamily: {
+                heading: ['Roboto', 'sans-serif'],
+                paragraph: ['Roboto', 'sans-serif']
+            },
+            colors: {
+                'primary': 'var(--primary)',
+                'primary-dark': 'var(--primary-dark)',
+                'dark-charcoal': 'var(--dark-charcoal)',
+            },
+        },
+    },
+};
+
+/* Fade-in animation for sections */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
